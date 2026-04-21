@@ -1,9 +1,11 @@
-name: Deploy Jupyter Book
-
+name: MyST GitHub Pages Deploy
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
 
 permissions:
   contents: read
@@ -11,50 +13,46 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Python dependencies
-        run: |
-          pip install --upgrade pip
-          pip install jupytext
+        run: pip install jupytext
 
-      - name: Convert py to ipynb
-        run: |
-          jupytext --to notebook 01_astro_synthesis.py
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install MyST
-        run: npm install -g mystmd
+      - name: Convert notebook
+        run: jupytext --to ipynb 01_astro_synthesis.py
 
       - name: Build HTML
         run: myst build --html
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _build/html
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
