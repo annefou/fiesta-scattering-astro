@@ -1,6 +1,8 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@id": "https://doi.org/10.5281/zenodo.19685025",
   "@type": "SoftwareSourceCode",
+  "version": "0.1.1",
   "name": "FIESTA Scattering Astro",
   "description": "Reproduction of the astrophysics scattering transform synthesis from Delouis et al. 2022, applied to a Large Scale Structure cosmological map using FOSCAT.",
   "license": "https://spdx.org/licenses/MIT",
