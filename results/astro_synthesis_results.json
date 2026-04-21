@@ -1,0 +1,22 @@
+{
+  "method": "Cross Scattering Transform (FOSCAT)",
+  "original_paper": "Delouis et al. 2022, A&A 668, A122",
+  "original_paper_doi": "10.1051/0004-6361/202244566",
+  "domain": "astrophysics",
+  "data": "Large Scale Structure (LSS) cosmological map",
+  "nside": 32,
+  "nsteps": 300,
+  "elapsed_seconds": 143.2096209526062,
+  "device": "cpu",
+  "statistics": {
+    "original_mean": -8.648882499073807e-07,
+    "original_std": 0.7392330765724182,
+    "synthesized_mean": -0.00025475086666347686,
+    "synthesized_std": 0.7459493744240793,
+    "pixel_correlation": -0.0037694621753651615,
+    "power_spectrum_ratio": 0.9873708107626998,
+    "scattering_error_start": 0.0008565812022425234,
+    "scattering_error_synth": 3.833653408946702e-06,
+    "scattering_improvement_pct": 99.55244445800781
+  }
+}

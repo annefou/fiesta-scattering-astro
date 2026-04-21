@@ -1,0 +1,60 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "FIESTA Scattering Astro",
+  "description": "Reproduction of the astrophysics scattering transform synthesis from Delouis et al. 2022, applied to a Large Scale Structure cosmological map using FOSCAT.",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/annefou/fiesta-scattering-astro",
+  "dateCreated": "2026-04-14",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Anne",
+      "familyName": "Fouilloux",
+      "@id": "https://orcid.org/0000-0002-1784-2920",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "LifeWatch ERIC"
+      }
+    }
+  ],
+  "referencePublication": {
+    "@type": "ScholarlyArticle",
+    "name": "Scattering transform applied to the CMB: new approach for component separation",
+    "author": [
+      { "@type": "Person", "givenName": "Jean-Marc", "familyName": "Delouis" },
+      { "@type": "Person", "givenName": "Erwan", "familyName": "Allys" },
+      { "@type": "Person", "givenName": "Emmanuel", "familyName": "Gauvrit" },
+      { "@type": "Person", "givenName": "Fran\u00e7ois", "familyName": "Boulanger" }
+    ],
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": "Astronomy & Astrophysics"
+    },
+    "datePublished": "2022",
+    "identifier": "https://doi.org/10.1051/0004-6361/202244566"
+  },
+  "isPartOf": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Science Live",
+      "url": "https://platform.sciencelive4all.org"
+    },
+    {
+      "@type": "Project",
+      "name": "FIESTA-OSCARS",
+      "url": "https://oscars-project.eu/"
+    }
+  ],
+  "keywords": [
+    "scattering transform",
+    "astrophysics",
+    "large scale structure",
+    "cosmology",
+    "FOSCAT",
+    "reproducible research",
+    "FAIR"
+  ]
+}

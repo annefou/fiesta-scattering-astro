@@ -1,0 +1,16 @@
+# Results (figures and model checkpoints)
+results/*.png
+results/*.pth
+
+# Python
+__pycache__/
+
+# Notebooks (generated from .py via jupytext)
+*.ipynb
+
+# Data directory (large files)
+data/
+!data/.gitkeep
+
+# Exception: keep the small LSS input map (1.5 MB)
+!data/LSS_map_nside128.npy

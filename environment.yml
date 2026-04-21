@@ -1,0 +1,12 @@
+name: fiesta-scattering-astro
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib
+  - scipy
+  - healpy
+  - jupytext
+  - pip:
+      - foscat

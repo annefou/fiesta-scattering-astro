@@ -1,0 +1,38 @@
+name: Run experiment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      CI: "true"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install foscat healpy numpy matplotlib scipy jupytext
+
+      - name: Convert and run notebook
+        run: |
+          jupytext --to notebook 01_astro_synthesis.py
+          jupyter execute 01_astro_synthesis.ipynb
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: results/
