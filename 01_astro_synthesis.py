@@ -85,9 +85,18 @@ SEED = 1234
 # by the power spectrum alone.
 
 # %%
-print("Loading LSS map...")
+import urllib.request
+
 data_path = Path("data/LSS_map_nside128.npy")
 
+if not data_path.exists():
+    print("Downloading LSS map from FOSCAT_DEMO...")
+    data_path.parent.mkdir(parents=True, exist_ok=True)
+    url = "https://github.com/jmdelouis/FOSCAT_DEMO/raw/main/data/LSS_map_nside128.npy"
+    urllib.request.urlretrieve(url, str(data_path))
+    print(f"  Downloaded: {data_path.stat().st_size / 1e6:.1f} MB")
+
+print("Loading LSS map...")
 im_full = np.load(str(data_path))
 print(f"  Original: nside=128, npix={im_full.shape[0]:,}")
 
