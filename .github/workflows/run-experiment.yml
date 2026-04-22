@@ -24,7 +24,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install foscat healpy numpy matplotlib scipy jupytext
+          pip install "foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu" healpy numpy matplotlib scipy jupytext
 
       - name: Convert and run notebook
         run: |
