@@ -52,8 +52,6 @@ import numpy as np
 import healpy as hp
 import foscat.scat_cov as sc
 import foscat.Synthesis as synthe
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 import json
@@ -303,6 +301,7 @@ fig.suptitle('Scattering Transform Synthesis — Astrophysics (LSS map)',
              fontsize=14, fontweight='bold')
 fig.tight_layout()
 fig.savefig(RESULTS / 'astro_synthesis.png', dpi=150, bbox_inches='tight')
+plt.show()
 print(f"Plot saved: {RESULTS / 'astro_synthesis.png'}")
 
 # %% [markdown]
