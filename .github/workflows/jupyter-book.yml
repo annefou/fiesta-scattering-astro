@@ -43,7 +43,7 @@ jobs:
       - name: Execute notebook
         run: |
           jupytext --to notebook 01_astro_synthesis.py
-          jupyter execute 01_astro_synthesis.ipynb
+          jupyter execute --inplace 01_astro_synthesis.ipynb
 
       - name: Build MyST site
         env:
