@@ -16,17 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Micromamba
+        uses: mamba-org/setup-micromamba@v3
         with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install "foscat @ git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu" healpy numpy matplotlib scipy jupytext nbclient ipykernel
+          environment-file: environment.yml
+          environment-name: fiesta-scattering-astro
+          init-shell: bash
+          cache-environment: true
 
       - name: Convert and run notebook
+        shell: micromamba-shell {0}
         run: |
           jupytext --to notebook 01_astro_synthesis.py
           jupyter execute --inplace 01_astro_synthesis.ipynb
