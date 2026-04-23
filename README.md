@@ -1,5 +1,9 @@
 # FIESTA Scattering Astro: Astrophysics Map Synthesis Reproduction
 
+[![Source DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19685025.svg)](https://doi.org/10.5281/zenodo.19685025)
+[![Docker image DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19708077.svg)](https://doi.org/10.5281/zenodo.19708077)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This repository reproduces the **scattering transform synthesis** method from
 [Delouis et al. 2022](https://doi.org/10.1051/0004-6361/202244566) (*Astronomy & Astrophysics*),
 applying it to a Large Scale Structure (LSS) cosmological map.
@@ -73,6 +77,51 @@ pip install git+https://github.com/annefou/FOSCAT.git@v0.1.0-cpu
 The fix is fully backwards compatible: on CUDA machines the behaviour is
 identical to the original. It simply adds auto-detection so that CPU is used as
 a fallback when CUDA is not available.
+
+## Container image
+
+A Docker container is built on every release and pushed to GitHub Container
+Registry, and archived to Zenodo for long-term preservation.
+
+```bash
+docker pull ghcr.io/annefou/fiesta-scattering-astro:latest
+docker run --rm -v "$PWD/results:/app/results" \
+    ghcr.io/annefou/fiesta-scattering-astro:latest
+```
+
+Zenodo-archived tarballs of every released image are available via the
+[Docker image concept DOI 10.5281/zenodo.19708077](https://doi.org/10.5281/zenodo.19708077)
+— each release has its own version-specific DOI listed on that Zenodo page.
+
+## How to cite
+
+If you use this repository, please cite it via its Zenodo DOI together with
+the original method paper (Delouis et al. 2022).
+
+```
+Fouilloux, A. (2026). FIESTA Scattering Astro: Astrophysics Map Synthesis
+Reproduction (v0.2.1). Zenodo. https://doi.org/10.5281/zenodo.19685025
+```
+
+BibTeX:
+
+```bibtex
+@software{fouilloux_fiesta_scattering_astro,
+  author    = {Fouilloux, Anne},
+  title     = {FIESTA Scattering Astro: Astrophysics Map Synthesis Reproduction},
+  year      = {2026},
+  version   = {0.2.1},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19685025},
+  url       = {https://doi.org/10.5281/zenodo.19685025}
+}
+```
+
+The DOI above is the **concept DOI** — it always resolves to the latest
+release. Specific version DOIs are available on the
+[Zenodo record page](https://doi.org/10.5281/zenodo.19685025).
+
+See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
 ## Author
 
