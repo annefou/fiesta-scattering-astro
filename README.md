@@ -38,6 +38,40 @@ FIESTA (FAIR Interoperable Experimental Scattering Transform Analysis) is part
 of the [OSCARS](https://oscars-project.eu/projects/fair-image-analysis-across-sciences) project, exploring reproducible
 research workflows that bridge disciplines through shared mathematical methods.
 
+## FORRT nanopublication chain
+
+The full provenance of this replication is recorded as a six-step FORRT
+nanopublication chain on the
+[Science Live](https://platform.sciencelive4all.org) platform. Each step is
+independently citable and machine-readable; together they form the FAIR
+provenance receipt for this replication.
+
+> **Headline assertion — machine-readable:**
+> [**This replication `cito:confirms` and `cito:usesMethodIn` Delouis et al. 2022**](https://w3id.org/sciencelive/np/RAAKbihIlG-DgS_LBhWCGPGc8-fKHWvIM-ee03u7t9kqs)
+>
+> The CiTO citation nanopublication encodes two relationships at once: we
+> substantiate the paper's own generalisation claim (`cito:confirms`) by
+> applying the framework to a different astrophysical map, and our work
+> uses the scattering-transform method developed in that paper
+> (`cito:usesMethodIn`). Discovery tools (Scholia, Wikidata pipelines,
+> SPARQL endpoints) can follow this single citation to find both
+> relationships.
+
+The five preceding nanopubs build the provenance ladder up to that citation:
+
+| Step | Type | Asserts | Nanopub URI |
+|---|---|---|---|
+| 1 | Quote-with-comment | Verbatim quote of Delouis et al. 2022's generalisation claim (Section 6 Conclusion), with personal comment on its potential | [`RAWvr…`](https://w3id.org/sciencelive/np/RAWvryGSpOem0bvHN8n9Oxb-YtE3SkPZCfjrsTX0vL_tA) |
+| 2 | AIDA sentence | Atomic, declarative restatement: scattering transforms on the sphere can synthesise astrophysical maps that match multi-scale non-Gaussian statistics | [`RAQAk…`](https://w3id.org/sciencelive/np/RAQAkuCWgBCTFrngRjONy5rpUfgNeafzDpG10Z1E0SSXI) |
+| 3 | FORRT Claim (model performance) | The synthesis claim, typed as a FORRT model-performance claim | [`RANzl…`](https://w3id.org/sciencelive/np/RANzldYFCS3QYLbv8mQ7yCzVrr83sjOMU11GueTODExw4) |
+| 4 | FORRT Replication Study | Methodology: same FOSCAT software, different astrophysical input data (cosmological LSS instead of Planck dust polarisation), lower resolution for CPU compatibility | [`RA0uF…`](https://w3id.org/sciencelive/np/RA0uFwTDq3Ip2_M_ZeHxmfavOu3ZCx9ZEeYSbXE0quHQk) |
+| 5 | FORRT Replication Outcome (Validated, High) | PS ratio 0.987, scattering match 99.55%, pixel correlation −0.004 | [`RAmEY…`](https://w3id.org/sciencelive/np/RAmEYMywIv9uDQPHuvPcPLEONpl7Et4M9hikmvDrRdVG0) |
+| 6 | **CiTO citation — `cito:confirms` + `cito:usesMethodIn` Delouis 2022** | The headline dual assertion above | [**`RAAKb…`**](https://w3id.org/sciencelive/np/RAAKbihIlG-DgS_LBhWCGPGc8-fKHWvIM-ee03u7t9kqs) |
+
+The chain runs: paper → quote → atomic claim → FORRT claim → study (this
+repo) → outcome (the metrics in the Results table) → CiTO citation back to
+the paper.
+
 ## Quick start
 
 ```bash
