@@ -1,0 +1,98 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.2/context",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.json",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.2" },
+        { "@id": "https://w3id.org/ro/wfrun/process/0.5" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": ["Dataset", "ResearchObject"],
+      "name": "FIESTA Scattering Astro: Astrophysics Map Synthesis Reproduction",
+      "description": "Reproduces the scattering transform synthesis method from Delouis et al. 2022 (Astronomy & Astrophysics) on a Large Scale Structure cosmological map using the FOSCAT library. Headline result: power spectrum ratio 0.987, scattering coefficient match 99.6 %.",
+      "license": { "@id": "https://spdx.org/licenses/MIT" },
+      "publisher": { "@id": "https://orcid.org/0000-0002-1784-2920" },
+      "author": [{ "@id": "https://orcid.org/0000-0002-1784-2920" }],
+      "mainEntity": { "@id": "Snakefile" },
+      "identifier": "https://doi.org/10.5281/zenodo.19685025",
+      "citation": [
+        { "@id": "https://doi.org/10.1051/0004-6361/202244566" },
+        { "@id": "https://w3id.org/sciencelive/np/RAmEYMywIv9uDQPHuvPcPLEONpl7Et4M9hikmvDrRdVG0" }
+      ],
+      "hasPart": [
+        { "@id": "Snakefile" },
+        { "@id": "environment.yml" },
+        { "@id": "Dockerfile" },
+        { "@id": "01_astro_synthesis.py" },
+        { "@id": "CITATION.cff" },
+        { "@id": "codemeta.json" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1784-2920",
+      "@type": "Person",
+      "name": "Anne Fouilloux",
+      "affiliation": "LifeWatch ERIC"
+    },
+    {
+      "@id": "Snakefile",
+      "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "name": "Replication pipeline",
+      "description": "Snakemake workflow orchestrating the FOSCAT scattering-transform synthesis of an LSS cosmological map.",
+      "programmingLanguage": { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake" }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#snakemake",
+      "@type": "ComputerLanguage",
+      "name": "Snakemake",
+      "url": "https://snakemake.readthedocs.io/"
+    },
+    {
+      "@id": "01_astro_synthesis.py",
+      "@type": ["File", "SoftwareSourceCode", "Notebook"],
+      "name": "Step 01 — FOSCAT scattering synthesis",
+      "programmingLanguage": "Python"
+    },
+    {
+      "@id": "environment.yml",
+      "@type": ["File", "ConfigurationFile"],
+      "name": "Conda environment specification",
+      "encodingFormat": "application/yaml"
+    },
+    {
+      "@id": "Dockerfile",
+      "@type": ["File", "ConfigurationFile"],
+      "name": "Container build specification",
+      "encodingFormat": "text/x-dockerfile"
+    },
+    {
+      "@id": "CITATION.cff",
+      "@type": ["File"],
+      "name": "Citation File Format metadata",
+      "encodingFormat": "application/yaml"
+    },
+    {
+      "@id": "codemeta.json",
+      "@type": ["File"],
+      "name": "CodeMeta-2.0 software metadata",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://doi.org/10.1051/0004-6361/202244566",
+      "@type": "ScholarlyArticle",
+      "name": "Non-parametric component separation with scattering transforms (Delouis et al. 2022)",
+      "datePublished": "2022"
+    },
+    {
+      "@id": "https://w3id.org/sciencelive/np/RAmEYMywIv9uDQPHuvPcPLEONpl7Et4M9hikmvDrRdVG0",
+      "@type": "CreativeWork",
+      "name": "FORRT Replication Outcome — Validated, High confidence"
+    }
+  ]
+}
