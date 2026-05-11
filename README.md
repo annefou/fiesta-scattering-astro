@@ -1,8 +1,14 @@
 # FIESTA Scattering Astro: Astrophysics Map Synthesis Reproduction
 
+[![CI](https://github.com/annefou/fiesta-scattering-astro/actions/workflows/ci.yml/badge.svg)](https://github.com/annefou/fiesta-scattering-astro/actions/workflows/ci.yml)
+[![Jupyter Book](https://github.com/annefou/fiesta-scattering-astro/actions/workflows/jupyter-book.yml/badge.svg)](https://annefou.github.io/fiesta-scattering-astro/)
+[![Docker](https://github.com/annefou/fiesta-scattering-astro/actions/workflows/docker.yml/badge.svg)](https://github.com/annefou/fiesta-scattering-astro/pkgs/container/fiesta-scattering-astro)
 [![Source DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19685025.svg)](https://doi.org/10.5281/zenodo.19685025)
 [![Docker image DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19708077.svg)](https://doi.org/10.5281/zenodo.19708077)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![FAIR4RS](https://img.shields.io/badge/FAIR4RS-conformant-brightgreen)](https://doi.org/10.15497/RDA00068)
+[![FORRT](https://img.shields.io/badge/FORRT-replication-blue)](https://forrt.org/)
+[![Science Live](https://img.shields.io/badge/Science%20Live-nanopub%20chain-purple)](https://w3id.org/sciencelive/np/RAmEYMywIv9uDQPHuvPcPLEONpl7Et4M9hikmvDrRdVG0)
 
 This repository reproduces the **scattering transform synthesis** method from
 [Delouis et al. 2022](https://doi.org/10.1051/0004-6361/202244566) (*Astronomy & Astrophysics*),
