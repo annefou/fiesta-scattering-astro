@@ -1,4 +1,4 @@
-name: Run experiment
+name: CI smoke run
 
 on:
   push:
